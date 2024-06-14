@@ -16,14 +16,14 @@ const ProfileScreen({super.key});
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 10),
+                        padding: EdgeInsets.symmetric(horizontal: 13, vertical: 10),
                         child: ClipOval(
                           child: SizedBox(
                             width: 80,
                             height: 80,
-                            child: Container(
-                              color: Color.fromARGB(255, 110, 0, 120),
-                            ),
+                            child: Image(
+                              image: AssetImage("assets/profilePhoto.jpeg")
+                              ),
                           ),
                         ),
                       ),
