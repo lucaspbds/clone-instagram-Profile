@@ -19,4 +19,6 @@ flutter:
   uses-material-design: true
   assets:
     - lib/assets/profilePhoto.jpeg
-    - lib/assets/icons/contactAdd.png
+    - lib/assets/post01.jpeg
+    - lib/assets/post02.png
+    - lib/assets/post03.png
