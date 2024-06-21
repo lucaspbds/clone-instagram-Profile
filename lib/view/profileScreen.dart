@@ -6,13 +6,13 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 84, 84, 84),
+      backgroundColor: Color(0xff363636),
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.fromLTRB(8, 50, 8, 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -21,19 +21,22 @@ class ProfileScreen extends StatelessWidget {
                       children: [
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
-                          child: Container(
-                            width: 100.0,
-                            height: 100.0,
-                            decoration: BoxDecoration(
+                          child: Container(            
+                            width: 90.0,
+                            height: 90.0,
+                            decoration: BoxDecoration(                          
                               shape: BoxShape.circle,
-                              image: DecorationImage(image: AssetImage('lib/assets/profilePhoto.jpeg')),
+                              image: DecorationImage(
+                                image: AssetImage('lib/assets/profilePhoto.jpeg',),
+                                fit: BoxFit.cover,
+                              ),
                               color: Colors.black
                             ),
                           )
                         ),
                         Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                          child: Column(                            
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -151,14 +154,18 @@ class ProfileScreen extends StatelessWidget {
                               return null;
                             },
                           ),
-                          backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 172, 212, 248)),
-                        ),
+                          backgroundColor: MaterialStateProperty.all<Color>(Color(0xffc2d4fe)),
+                          
+
+                          ),
                         onPressed: () {},
                         child: Row(
                           children: [
                             Icon(
-                              Icons.alternate_email
+                              Icons.alternate_email,
+                              size: 15,
                             ),
+                            SizedBox(width: 5,),
                             Text("catholicChurch",
                             style: TextStyle(
                             fontSize: 12,
@@ -172,18 +179,18 @@ class ProfileScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           SizedBox(
                             height: 35,
                             child: TextButton(
                               style: ButtonStyle(
+                                fixedSize: MaterialStatePropertyAll(Size(130, 15)),
                                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8.0),
                                     side: BorderSide(
-                                      width: 1,
+                                      width: 0,
                                       color: Colors.transparent
                                     )
                                   ),
@@ -201,28 +208,28 @@ class ProfileScreen extends StatelessWidget {
                                     return null;
                                   },
                                 ),
-                                backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFFA5BCD2)),
+                                backgroundColor: MaterialStateProperty.all<Color>(Color(0xffc2d4fe)),
                               ),
                               onPressed: () {},
                               child: const Text(
                                 "Editar perfil",
                                 style: TextStyle(
-                                  fontSize: 12, 
+                                  fontSize: 13, 
                                   fontWeight: FontWeight.w600
                                 ),
                               ),
                             ),
                           ),
-                          SizedBox(width: 25,),
                           SizedBox(
                             height: 35,
                             child: TextButton(
                               style: ButtonStyle(
+                                fixedSize: MaterialStatePropertyAll(Size(165, 15)),
                                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8.0),
                                     side: BorderSide(
-                                      width: 1,
+                                      width: 0,
                                       color: Colors.transparent
                                     )
                                   ),
@@ -240,24 +247,25 @@ class ProfileScreen extends StatelessWidget {
                                     return null;
                                   },
                                 ),
-                                backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFFA5BCD2)),
+                                backgroundColor: MaterialStateProperty.all<Color>(Color(0xffc2d4fe)),
                               ),
                               onPressed: () {},
                               child: const Text(
                                 "Compartilhar perfil",
                                 style: TextStyle(
-                                  fontSize: 12, 
+                                  fontSize: 13, 
                                   fontWeight: FontWeight.w600
                                 ),
                               ),
                             ),
                           ),
-                          SizedBox(width: 25,),
+                          
                           SizedBox(
                             height: 35,
                             width: 55,
                             child: TextButton(
                               style: ButtonStyle(
+                                fixedSize: MaterialStatePropertyAll(Size(130, 15)),
                                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8.0),
@@ -267,7 +275,7 @@ class ProfileScreen extends StatelessWidget {
                                     )
                                   ),
                                 ),
-                                padding: MaterialStateProperty.all(const EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0)),
+                                padding: MaterialStateProperty.all(const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0)),
                                 foregroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(255, 0, 0, 0)),
                                 overlayColor: MaterialStateProperty.resolveWith<Color?>(
                                   (Set<MaterialState> states) {
@@ -280,7 +288,7 @@ class ProfileScreen extends StatelessWidget {
                                     return null;
                                   },
                                 ),
-                                backgroundColor: MaterialStateProperty.all<Color>(const Color(0xFFA5BCD2)),
+                                backgroundColor: MaterialStateProperty.all<Color>(Color(0xffc2d4fe)),
                               ),
                               onPressed: () {},
                               child: SizedBox(
@@ -299,69 +307,68 @@ class ProfileScreen extends StatelessWidget {
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(8.0, 20.0, 0.0, 0.0),
                       child: Row(
-                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                            child: Container(
-                              width: 100,
-                              height: 100,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.black
+                          Column(
+                            children: [
+                              Container(
+                                width: 90,
+                                height: 90,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,                                
+                                  image: DecorationImage(
+                                    image: AssetImage("lib/assets/destaque.jpeg"),
+                                  fit: BoxFit.cover,
+                                  )
+                                ),                          
                               ),
-                            ),
-                          ),
-                          Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 0.0, 0.0),
-                            child: Container(
-                              width: 100,
-                              height: 100,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: Colors.transparent,
-                                border: Border.all(color: Colors.white)
-
-                              ),
-                              child: Icon(
-                                Icons.add,
-                                color: Colors.white,
-                                size: 30,
-                              ),
-                            ),
-                          )
-                        ],
-                      )
-                    ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 0.0, 0.0),
-                    child: Row(
-                      children: [
-                        Text("Destaques",
+                              Text("Destaques",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 12,
                             fontWeight: FontWeight.w300
                           ),
                         ),
-                        SizedBox(width: 88,),
-                        Text("Novo",
+                        ],
+                          ),
+                          SizedBox(width: 30,),
+                          Column(
+                            children: [
+                              Container(
+                                width: 90,
+                                height: 90,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color: Colors.transparent,
+                                  border: Border.all(color: Colors.white)                              
+                                ),
+                                child: Icon(
+                                  Icons.add,
+                                  color: Colors.white,
+                                  size: 30,
+                                ),
+                              ),
+                              Text("Novo",
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 12,
                             fontWeight: FontWeight.w300
                           ),
                         )
-                      ],
+                            ],
+                          )
+                        ],
+                      )
                     ),
-                  ),
                   Padding(
                     padding: EdgeInsets.fromLTRB(0, 35, 0, 0),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         TextButton(
                           style: ButtonStyle(
                             backgroundColor: MaterialStatePropertyAll(Colors.transparent),
+                            fixedSize: MaterialStatePropertyAll(Size(120, 25)),
                           ),
                           onPressed: () {}, 
                           child: Icon(
@@ -373,6 +380,7 @@ class ProfileScreen extends StatelessWidget {
                           TextButton(
                           style: ButtonStyle(
                             backgroundColor: MaterialStatePropertyAll(Colors.transparent),
+                            fixedSize: MaterialStatePropertyAll(Size(120, 50)),
                           ),
                           onPressed: () {}, 
                           child: Icon(
@@ -384,7 +392,7 @@ class ProfileScreen extends StatelessWidget {
                           TextButton(
                           style: ButtonStyle(
                             backgroundColor: MaterialStatePropertyAll(Colors.transparent),
-                            
+                            fixedSize: MaterialStatePropertyAll(Size(120, 50)),                            
                           ),
                           onPressed: () {}, 
                           child: Icon(
@@ -396,18 +404,74 @@ class ProfileScreen extends StatelessWidget {
                       ],
                     ), 
                   ),
+                 Padding(
+                  padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
+                  child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                            Container(
+                              width: 120,
+                              height: 1,
+                              color: Color.fromARGB(255, 255, 255, 255),
+                            )
+                          ],
+                        ),
+                      ),
+
                   Padding(
-                    padding: EdgeInsets.fromLTRB(8.0, 0, 0, 0),
+                    padding: EdgeInsets.fromLTRB(0.0, 10, 0, 0.0),
                     child: Row(
-                      children: [
-                        Container(
-                          width: 80,
-                          height: 80,
-                          child: Image(image: AssetImage("lib/assets/post01.jpeg")),
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [                        
+                        Container(                          
+                          width: 120,
+                          height: 120,
+                          child: Image(
+                            image: AssetImage("lib/assets/post01.jpeg"),
+                            fit: BoxFit.cover,),
+                        ),
+                        Container(                          
+                          width: 120,
+                          height: 120,
+                          child: Image(
+                            image: AssetImage("lib/assets/post02.png"),
+                            fit: BoxFit.cover,),
+                        ),
+                        Container(                          
+                          width: 120,
+                          height: 120,
+                          child: Image(
+                            image: AssetImage("lib/assets/post03.png"),
+                            fit: BoxFit.cover,),
                         )
                       ],
                     ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(8, 50, 0, 0),
+                    child: Row(
+                      children: [
+                        Column(
+                          children: [
+                            Text("Complete seu perfil",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            ),
+                            Text("3 de 4 CONCLUÍDOS",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                            ),
+                            )
+                          ],
+                        ),
+                      ],
                     ),
+                  )
     
                   ],
                 ),
